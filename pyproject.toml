@@ -5,8 +5,8 @@ version = "1.0.0"
 authors = ["angelo"]
 
 [tool.poetry.dependencies]
+prometheus_client = "~0.8.0"
 python = "^3.8"
-
 
 [tool.poetry.dev-dependencies]
 black = "19.10b0"
