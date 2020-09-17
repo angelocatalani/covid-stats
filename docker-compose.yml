@@ -1,7 +1,6 @@
 version: "3.8"
 
 services:
-
   app:
     build:
       context: .
@@ -18,6 +17,17 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
       - ./grafana/config.env
+    depends_on:
+      - influxdb
+      - prometheus
+
+  influxdb:
+    image: influxdb:1.8.0
+    ports:
+      - 8086:8086
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+      - ./influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
 
   prometheus:
     image: prom/prometheus:v2.21.0
@@ -33,5 +43,6 @@ services:
       - '--web.console.templates=/usr/share/prometheus/consoles'
 
 volumes:
-    prometheus_data:
     grafana_data:
+    influxdb_data:
+    prometheus_data:

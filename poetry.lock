@@ -102,6 +102,24 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.10"
 
 [[package]]
+category = "main"
+description = "InfluxDB client"
+name = "influxdb"
+optional = false
+python-versions = "*"
+version = "5.3.0"
+
+[package.dependencies]
+msgpack = "0.6.1"
+python-dateutil = ">=2.6.0"
+pytz = "*"
+requests = ">=2.17.0"
+six = ">=1.10.0"
+
+[package.extras]
+test = ["nose", "nose-cov", "mock", "requests-mock"]
+
+[[package]]
 category = "dev"
 description = "A Python utility / library to sort Python imports."
 name = "isort"
@@ -122,6 +140,14 @@ name = "more-itertools"
 optional = false
 python-versions = ">=3.5"
 version = "8.5.0"
+
+[[package]]
+category = "main"
+description = "MessagePack (de)serializer."
+name = "msgpack"
+optional = false
+python-versions = "*"
+version = "0.6.1"
 
 [[package]]
 category = "dev"
@@ -243,6 +269,25 @@ pytest = ">=4.6"
 testing = ["fields", "hunter", "process-tests (2.0.2)", "six", "pytest-xdist", "virtualenv"]
 
 [[package]]
+category = "main"
+description = "Extensions to the standard Python datetime module"
+name = "python-dateutil"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+version = "2.8.1"
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
+category = "main"
+description = "World timezone definitions, modern and historical"
+name = "pytz"
+optional = false
+python-versions = "*"
+version = "2020.1"
+
+[[package]]
 category = "dev"
 description = "Alternative regular expression module, to replace re."
 name = "regex"
@@ -269,7 +314,7 @@ security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -322,7 +367,7 @@ python-versions = "*"
 version = "0.2.5"
 
 [metadata]
-content-hash = "223c33b92b14cf35e9694f46abbd7eb093918347e872423efeca94cb74bca994"
+content-hash = "d3ab7c22b48f3ecc9fcce2f0f22b478da1f6a217d1397dc6b81affbd0b96851d"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -398,6 +443,10 @@ idna = [
     {file = "idna-2.10-py2.py3-none-any.whl", hash = "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"},
     {file = "idna-2.10.tar.gz", hash = "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6"},
 ]
+influxdb = [
+    {file = "influxdb-5.3.0-py2.py3-none-any.whl", hash = "sha256:b4c034ee9c9ee888d43de547cf40c616bba35f0aa8f11e5a6f056bf5855970ac"},
+    {file = "influxdb-5.3.0.tar.gz", hash = "sha256:9bcaafd57ac152b9824ab12ed19f204206ef5df8af68404770554c5b55b475f6"},
+]
 isort = [
     {file = "isort-4.3.21-py2.py3-none-any.whl", hash = "sha256:6e811fcb295968434526407adb8796944f1988c5b65e8139058f2014cbe100fd"},
     {file = "isort-4.3.21.tar.gz", hash = "sha256:54da7e92468955c4fceacd0c86bd0ec997b0e1ee80d97f67c35a78b719dccab1"},
@@ -405,6 +454,25 @@ isort = [
 more-itertools = [
     {file = "more-itertools-8.5.0.tar.gz", hash = "sha256:6f83822ae94818eae2612063a5101a7311e68ae8002005b5e05f03fd74a86a20"},
     {file = "more_itertools-8.5.0-py3-none-any.whl", hash = "sha256:9b30f12df9393f0d28af9210ff8efe48d10c94f73e5daf886f10c4b0b0b4f03c"},
+]
+msgpack = [
+    {file = "msgpack-0.6.1-cp27-cp27m-manylinux1_i686.whl", hash = "sha256:3129c355342853007de4a2a86e75eab966119733eb15748819b6554363d4e85c"},
+    {file = "msgpack-0.6.1-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:31f6d645ee5a97d59d3263fab9e6be76f69fa131cddc0d94091a3c8aca30d67a"},
+    {file = "msgpack-0.6.1-cp27-cp27m-win32.whl", hash = "sha256:fd509d4aa95404ce8d86b4e32ce66d5d706fd6646c205e1c2a715d87078683a2"},
+    {file = "msgpack-0.6.1-cp27-cp27m-win_amd64.whl", hash = "sha256:70cebfe08fb32f83051971264466eadf183101e335d8107b80002e632f425511"},
+    {file = "msgpack-0.6.1-cp27-cp27mu-manylinux1_i686.whl", hash = "sha256:8e68c76c6aff4849089962d25346d6784d38e02baa23ffa513cf46be72e3a540"},
+    {file = "msgpack-0.6.1-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:86b963a5de11336ec26bc4f839327673c9796b398b9f1fe6bb6150c2a5d00f0f"},
+    {file = "msgpack-0.6.1-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:72cb7cf85e9df5251abd7b61a1af1fb77add15f40fa7328e924a9c0b6bc7a533"},
+    {file = "msgpack-0.6.1-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:8c73c9bcdfb526247c5e4f4f6cf581b9bb86b388df82cfcaffde0a6e7bf3b43a"},
+    {file = "msgpack-0.6.1-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:26cb40116111c232bc235ce131cc3b4e76549088cb154e66a2eb8ff6fcc907ec"},
+    {file = "msgpack-0.6.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:62bd8e43d204580308d477a157b78d3fee2fb4c15d32578108dc5d89866036c8"},
+    {file = "msgpack-0.6.1-cp36-cp36m-win32.whl", hash = "sha256:a28e69fe5468c9f5251c7e4e7232286d71b7dfadc74f312006ebe984433e9746"},
+    {file = "msgpack-0.6.1-cp36-cp36m-win_amd64.whl", hash = "sha256:97ac6b867a8f63debc64f44efdc695109d541ecc361ee2dce2c8884ab37360a1"},
+    {file = "msgpack-0.6.1-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:3ce7ef7ee2546c3903ca8c934d09250531b80c6127e6478781ae31ed835aac4c"},
+    {file = "msgpack-0.6.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:7c55649965c35eb32c499d17dadfb8f53358b961582846e1bc06f66b9bccc556"},
+    {file = "msgpack-0.6.1-cp37-cp37m-win32.whl", hash = "sha256:9d4f546af72aa001241d74a79caec278bcc007b4bcde4099994732e98012c858"},
+    {file = "msgpack-0.6.1-cp37-cp37m-win_amd64.whl", hash = "sha256:300fd3f2c664a3bf473d6a952f843b4a71454f4c592ed7e74a36b205c1782d28"},
+    {file = "msgpack-0.6.1.tar.gz", hash = "sha256:4008c72f5ef2b7936447dcb83db41d97e9791c83221be13d5e19db0796df1972"},
 ]
 mypy = [
     {file = "mypy-0.770-cp35-cp35m-macosx_10_6_x86_64.whl", hash = "sha256:a34b577cdf6313bf24755f7a0e3f3c326d5c1f4fe7422d1d06498eb25ad0c600"},
@@ -457,6 +525,14 @@ pytest = [
 pytest-cov = [
     {file = "pytest-cov-2.10.1.tar.gz", hash = "sha256:47bd0ce14056fdd79f93e1713f88fad7bdcc583dcd7783da86ef2f085a0bb88e"},
     {file = "pytest_cov-2.10.1-py2.py3-none-any.whl", hash = "sha256:45ec2d5182f89a81fc3eb29e3d1ed3113b9e9a873bcddb2a71faaab066110191"},
+]
+python-dateutil = [
+    {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
+    {file = "python_dateutil-2.8.1-py2.py3-none-any.whl", hash = "sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"},
+]
+pytz = [
+    {file = "pytz-2020.1-py2.py3-none-any.whl", hash = "sha256:a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"},
+    {file = "pytz-2020.1.tar.gz", hash = "sha256:c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"},
 ]
 regex = [
     {file = "regex-2020.7.14-cp27-cp27m-win32.whl", hash = "sha256:e46d13f38cfcbb79bfdb2964b0fe12561fe633caf964a77a5f8d4e45fe5d2ef7"},

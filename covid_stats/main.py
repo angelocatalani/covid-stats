@@ -14,5 +14,5 @@ sample_counter = Counter(
 if __name__ == '__main__':
     start_http_server(8000)
     while True:
-        sample_counter.labels(ctr="sample").inc()
-        time.sleep(1)
+        pass
+
