@@ -5,10 +5,12 @@ version = "1.0.0"
 authors = ["angelo"]
 
 [tool.poetry.dependencies]
+environs = "~8.0.0"
 influxdb = "~5.3.0"
 prometheus_client = "~0.8.0"
 python = "^3.8"
 requests = "~2.24.0"
+tenacity = "~6.2.0"
 
 [tool.poetry.dev-dependencies]
 black = "19.10b0"

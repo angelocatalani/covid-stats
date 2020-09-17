@@ -6,15 +6,20 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8000:8000
+      - ${PROMETHEUS_APP_PORT}:${PROMETHEUS_APP_PORT}
+    env_file:
+      - docker-compose.env
+    depends_on:
+      - influxdb
 
   grafana:
     image: grafana/grafana:7.1.5-ubuntu
     ports:
-      - 3000:3000
+      - ${GRAFANA_PORT}:${GRAFANA_PORT}
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
     env_file:
       - ./grafana/config.env
     depends_on:
@@ -24,7 +29,7 @@ services:
   influxdb:
     image: influxdb:1.8.0
     ports:
-      - 8086:8086
+      - ${INFLUXDB_PORT}:${INFLUXDB_PORT}
     volumes:
       - influxdb_data:/var/lib/influxdb
       - ./influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
@@ -32,7 +37,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.21.0
     ports:
-      - 9090:9090
+      - ${PROMETHEUS_PORT}:${PROMETHEUS_PORT}
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
