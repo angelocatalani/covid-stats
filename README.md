@@ -1,5 +1,13 @@
 # Covid Stats
 
+[![Python](https://img.shields.io/badge/python-3.8-informational)](https://docs.python.org/3/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Grafana](https://img.shields.io/badge/grafana-7.0.5-orange)](https://grafana.com/)
+[![Prometheus](https://img.shields.io/badge/prometheus-2.21.0-red)](https://prometheus.io/)
+[![InfluxDB](https://img.shields.io/badge/influxdb-1.8.0-blueviolet)](https://www.influxdata.com/)
+
 The aim of this project is to retrieve COVID-19 statistics and plot in Grafana.
 
 Specifically, it retrieves confirmed, death and recovered cases for all the countries except United States (due to API limitations)
