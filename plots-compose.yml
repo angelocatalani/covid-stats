@@ -2,6 +2,16 @@ version: "3.8"
 
 services:
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["real_time"]
+    ports:
+      - ${PROMETHEUS_APP_PORT}:${PROMETHEUS_APP_PORT}
+    env_file:
+      - covid_stats.env
+
   grafana:
     image: grafana/grafana:7.1.5-ubuntu
     ports:

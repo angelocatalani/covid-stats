@@ -6,8 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - ${PROMETHEUS_APP_PORT}:${PROMETHEUS_APP_PORT}
+    command: ["init_database"]
     networks:
       - app_network
     env_file:

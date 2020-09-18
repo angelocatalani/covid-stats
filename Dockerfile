@@ -15,3 +15,4 @@ RUN poetry install --no-dev
 COPY covid_stats ./covid_stats
 EXPOSE 8000/tcp
 ENTRYPOINT ["python","./covid_stats/main.py"]
+
