@@ -13,6 +13,6 @@ COPY pyproject.toml poetry.lock ./
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 RUN poetry install --no-dev
 COPY covid_stats ./covid_stats
-EXPOSE "${PROMETHEUS_APP_PORT}/tcp"
+EXPOSE 8000/tcp
 ENTRYPOINT ["python","./covid_stats/main.py"]
 
