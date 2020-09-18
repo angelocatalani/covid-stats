@@ -1,4 +1,2 @@
-__all__ = [
-    "Exporter"
-]
+__all__ = ["Exporter"]
 from covid_stats.core.exporter import Exporter
