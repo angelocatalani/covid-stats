@@ -36,6 +36,8 @@ The you need to configure the datasource and dashboard for `Grafana`:
 - add the `InfluxDB` datasource using as address: `http://influxdb:8086` and database name: `covid_stast_by_country`
 - import the dashboard located inside: `grafana/dashboards/covid.json`
 
+![alt text](grafana-preview.png)
+
 ## Contributing
 
 Open a PR on the master branch.
