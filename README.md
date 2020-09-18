@@ -6,7 +6,6 @@ Specifically, it retrieves confirmed, death and recovered cases for all the coun
 from the 1st January 2020.
 The external API to retrieve raw data is: [covid19api](https://covid19api.com/).
 
-
 # Table of Contents
 
 * [Architecture](#Architecture)
@@ -15,7 +14,10 @@ The external API to retrieve raw data is: [covid19api](https://covid19api.com/).
 
 ## Architecture
 
+The Application at the start-up fetches all the historical data until today.
+Then every day it gets the data concerning the day before due to the [covid19api](https://covid19api.com/) limitation.
 
+![alt text](covid_architecture.jpg)
 
 ## Usage
 
@@ -28,6 +30,7 @@ Then inside the repository run the start script:
 cd covid-stats
 sh start.sh
 ```
+
 The you need to configure the datasource and dashboard for `Grafana`:
 - visit the page: `localhost:3000`
 - add the `InfluxDB` datasource using as address: `http://influxdb:8086` and database name: `covid_stast_by_country`
