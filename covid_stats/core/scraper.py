@@ -1,4 +1,4 @@
-"""Utility to fetch and manipulate  COVID-19 data."""
+"""Utility to fetch and manipulate COVID-19 data."""
 
 
 import datetime
