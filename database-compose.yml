@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${PROMETHEUS_APP_PORT}:${PROMETHEUS_APP_PORT}
+    networks:
+      - app_network
+    env_file:
+      - covid_stats.env
+    depends_on:
+      - influxdb
+
+  influxdb:
+    image: influxdb:1.8.0
+    ports:
+      - ${INFLUXDB_PORT}:${INFLUXDB_PORT}
+    networks:
+      - app_network
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+      - ./influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+
+volumes:
+    influxdb_data:
+
+networks:
+  app_network:
+    name: app_network
+    driver: bridge
+

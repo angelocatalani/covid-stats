@@ -20,7 +20,7 @@ if __name__ == "__main__":
     )
     logger = logging.getLogger(__name__)
     env = Env()
-    env.read_env("../docker-compose.env")
+    env.read_env("../covid_stats.env")
     start_http_server(env.int("PROMETHEUS_APP_PORT"))
 
     exporter = Exporter(host=env.str("INFLUXDB_HOST"), port=env.int("INFLUXDB_PORT"))
